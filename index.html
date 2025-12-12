@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration form</title>
+    <style>
+        .main{
+           justify-content: center;
+           align-items: center;
+            background-color: hsla(254, 39%, 66%, 0.655);
+            padding: 50px;
+           
+           
+            
+           
+        
+        }
+        .reg{
+            color: cornsilk;
+            font-style:bold  ;
+
+        }
+        .reg:hover{
+            color: black;
+          
+
+
+        }
+        .field{
+           width: 550px;
+            justify-content: center;
+            align-items: center;
+            left: 150px;
+        }
+        .sub{
+            border-radius: 50px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+     <center><fieldset class="field">
+   
+    <form onsubmit="handle(event)">
+        <div class="main">
+       <center><div class="reg"> <h1>REGISTRATION FORM</h1></div></center>
+       <div class="sub">
+      <center><div class="fnam"> <br><br><label><b>FIRSTNAME:</b> <input type="text" size="=50"id="firstname" placeholder="enter your first name" ></label></div></center>
+        <center><div class="lnam"><BR><br> <label><b>LAST NAME:</b><input type="text" id="lastname" placeholder="enter your last name" required></label></div></center>
+        <center><div class="mail"><br><br><label><b>EMAIL:</b>  <input type="text" id="mail" placeholder="enter your email"></label></div></center>
+      <center> <div class="pass"><br><br><label><B>PASSWORD:</B><input type="password" id="pass"></label></div></center>
+       <center> <div class="repass"><br><br><label><B>RE-PASSWORD:</B><input type="password" id="pw"></label></div></center>
+        <center> <div class="gen"><br><br><label><b>GENDER:</b></label>
+             <label>male:<input type="radio"name="gender" required></label>
+          <label>female:<input type="radio"name="gender" required></label></center>
+       <center><div class="ph"> <br><br> <label><b>PHONE NO:</b><input TYPE="text" id="ph"  placeholder="enter your number"></label></div></center>
+ <center><div class="sub"><br><button type="submit" size="50px"><b>submit</b></button></div></center>
+ </div>
+</div></form></center></fieldset>
+<script>
+    function handle(event){
+        event.preventDefault();
+        let fn=document.getElementById("firstname").value.trim()
+        let ln=document.getElementById("lastname").value.trim()
+         let m=document.getElementById("mail").value.trim()
+          let p=document.getElementById("ph").value.trim()
+          let pass=document.getElementById("pass").value.trim()
+          let pw=document.getElementById("pw").value.trim()
+          if(fn.length<3){
+            alert("enter a valid name");
+          }
+     else if(m === " ") {
+         alert("enter a valid mail")
+    }else if(!m.includes("@") || !m.includes(".")){
+        alert("invalid mail")
+    }
+    else if(pass!=pw){
+         alert("enter the correct password")
+    }
+    
+    else if(p.length<10){
+        alert("enter 10 digit number")
+    }else{
+        alert(`form submit by    ${fn}  `)
+    }
+    }
+
+    
+</script>
+    
+    
+    
+
+    
+
+
+
+    
+</body>
+</html>
